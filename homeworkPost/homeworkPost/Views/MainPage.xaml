@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:_vm="clr-namespace:homeworkPost.ViewsModels"
+             x:Class="homeworkPost.MainPage">
+
+    <ContentPage.BindingContext>
+        <_vm:MPVM x:Name="vm"/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Button Text="Load data"
+                    Command="{Binding SomeCommand}"
+                    CommandParameter="adpfjasp " />
+
+            <StackLayout
+                BindableLayout.ItemsSource="{Binding Users}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Frame
+                                BorderColor="Black"
+                                HasShadow="True"
+                                Margin="10">
+                                <StackLayout>
+                                    <Label Text="{Binding Name}" 
+                                           FontSize="32"/>
+                                    <Label Text="{Binding LastName}" 
+                                           FontSize="32"/>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+
+
+</ContentPage>
